@@ -75,13 +75,19 @@ CREATE TABLE parent_student (
 -- =============================================================
 
 CREATE TABLE course (
-    course_id    SERIAL PRIMARY KEY,
-    name         VARCHAR(128) NOT NULL,
-    code         VARCHAR(32) UNIQUE,           -- mã môn học
-    description  TEXT,
-    created_by   INTEGER REFERENCES teacher(teacher_id) ON DELETE SET NULL,
-    created_at   TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    updated_at   TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    course_id      SERIAL PRIMARY KEY,
+    name           VARCHAR(128) NOT NULL,
+    code           VARCHAR(32) UNIQUE,
+    description    TEXT,
+
+    created_by     INTEGER REFERENCES teacher(teacher_id) ON DELETE SET NULL,
+
+    thumbnail_url  TEXT,
+    theme_color    VARCHAR(16),
+    is_published   BOOLEAN DEFAULT FALSE,
+
+    created_at     TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at     TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Lớp học là một instance của Course
@@ -378,8 +384,3 @@ CREATE TRIGGER trg_submission_updated_at
     BEFORE UPDATE ON submission
     FOR EACH ROW EXECUTE FUNCTION fn_set_updated_at();
 
--- Chạy lệnh ALTER TABLE này trong Postgres của bạn
-ALTER TABLE course 
-ADD COLUMN thumbnail_url TEXT,               -- Hình ảnh bìa (VD: con hổ, tên lửa, quả táo)
-ADD COLUMN theme_color VARCHAR(16),          -- Mã màu nền cho thẻ khóa học (VD: '#FFB6C1', '#87CEEB')
-ADD COLUMN is_published BOOLEAN DEFAULT FALSE; -- Ẩn/hiện khóa học (Giáo viên soạn xong mới bật lên)
