@@ -75,9 +75,6 @@ export default function ProfilePage() {
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-8rem)] w-full pb-10 mt-8">
       <div className="w-full max-w-4xl">
 
-        <button onClick={() => router.back()} className="mb-6 flex items-center gap-2 px-5 py-2.5 bg-white text-gray-600 font-bold rounded-2xl border-2 border-gray-200 hover:bg-gray-50 hover:border-sky-300 hover:text-sky-600 hover:-translate-x-1 transition-all shadow-sm w-fit">
-          <span className="text-xl">⬅️</span> Quay lại chỗ cũ
-        </button>
 
         <div className="flex items-center justify-center gap-3 mb-8">
           <span className="text-4xl">🪪</span>

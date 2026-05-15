@@ -208,9 +208,7 @@ export default function CourseDetailPage() {
 
   return (
     <div className="max-w-6xl mx-auto pb-10">
-      <button onClick={() => router.push('/courses')} className="mb-6 font-bold text-gray-500 hover:text-blue-600 flex items-center gap-2 transition-colors">
-        <span>⬅</span> Quay lại danh sách môn
-      </button>
+
 
       <div className="bg-white rounded-3xl shadow-sm p-8 mb-8 border-2 border-sky-100 flex gap-6 items-center">
         <div className="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center text-4xl shadow-inner">
