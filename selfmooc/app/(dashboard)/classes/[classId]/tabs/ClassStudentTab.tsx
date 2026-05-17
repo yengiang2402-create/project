@@ -60,7 +60,7 @@ export default function ClassStudentsTab({ classId }: { classId: number }) {
         {/* KHỐI 2: IMPORT EXCEL */}
         <div className="bg-white rounded-3xl p-6 border-2 border-purple-100 shadow-sm">
           <h2 className="text-lg font-bold text-gray-800 mb-2 flex items-center gap-2"><span>📊</span> Import Excel</h2>
-          <p className="text-[10px] text-gray-400 mb-4 uppercase font-black">File cần có cột: MaSoHocSinh, HoTen</p>
+          <p className="text-[10px] text-gray-400 mb-4 uppercase font-black">File cần có cột: MASOHOCSINH, HOTEN</p>
 
           <form onSubmit={async (e) => {
             e.preventDefault();

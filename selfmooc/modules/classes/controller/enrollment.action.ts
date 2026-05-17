@@ -27,8 +27,8 @@ export async function addStudentsToClassAction(classId: number, type: 'manual' |
 
     let successCount = 0;
     for (const row of studentsToProcess) {
-      const code = clean(row['MaSoHocSinh'] || row['student_code']);
-      const name = clean(row['HoTen'] || row['name']) || 'Học sinh mới';
+      const code = clean(row['MASOHOCSINH'] || row['student_code']);
+      const name = clean(row['HOTEN'] || row['name']) || 'Học sinh mới';
 
       if (!code) continue;
 
